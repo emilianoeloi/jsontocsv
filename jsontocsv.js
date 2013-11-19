@@ -49,7 +49,7 @@ Converter.prototype = {
 			list.forEach.call( Object.keys( obj ), function( key ){    
 				head.push(key);
 			});
-			this.csvContainer.value = head.join(this.separator);
+			this.csvContainer.value = '"'+head.join('"'+this.separator+'"')+'"';
 			
 			var body = [];
 			for(var i in list){
@@ -57,7 +57,7 @@ Converter.prototype = {
 				var item = list[i];
 				var line = [];
 				for(var h in head){
-					line.push(item[head[h]]);
+					line.push('"'+item[head[h]]+'"');
 				}
 				this.csvContainer.value += line.join(this.separator);	
 			}
