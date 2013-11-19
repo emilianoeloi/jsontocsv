@@ -1,0 +1,54 @@
+<!DOCUMENT html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>JavaScript Object Notation to Comma-Separated Values / RFC4627 to RFC4180 / json to csv </title>
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap-theme.min.css">
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<h1>JSON to CSV <small>for Google Chrome</small></h1>
+				<p>JavaScript Object Notation to Comma-Separated Values / RFC4627 to RFC4180 / json to csv</p>
+			</header>
+			<section>
+				<form id="converter">
+					<div class="row">
+						<div class="col-xs-6">
+					<label for="ta-json">JSON</label>
+						<textarea rows="8" id="ta-json" class="form-control json"></textarea>
+					
+						</div>
+						<div class="col-xs-6">
+					<label for="ta-csv">CSV</label>
+						<textarea rows="8" id="ta-csv" class="form-control csv"></textarea>
+					
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+					<label>Separator
+						<input class="form-control separator" size="1" maxlength="1" value="," />
+					</label>
+					<br />
+					<input type="submit" value="Convert" class="btn btn-default" />
+					<a href="javascript://" download="jsonto.csv">download CSV file</a>
+						</div>
+					</div>
+				</form>
+				<hr />
+				<a href="http://tools.ietf.org/html/rfc4180">Common Format and MIME Type for Comma-Separated Values (CSV) Files</a><br />
+				<a href="http://tools.ietf.org/html/rfc4627">The application/json Media Type for JavaScript Object Notation (JSON)</a><br />
+				<hr />
+			<section>
+			<footer class="bs-footer">
+				<p>Emiliano Eloi Silva Barbosa &lt;emilianoeloi@gmail.com&gt;</p>
+			</footer>
+		
+		</div>
+	</body>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+	<script src="jsontocsv.js"></script>
+</html>
