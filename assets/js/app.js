@@ -7,7 +7,7 @@ $(document).ready(function(){
 
 	$("form").submit(function(){
 	  	var text = newConversion.value;
-	  	console.log('text: ' + text);
+	  	$("#conversion-items").empty();
 
 		if (text.replace(/ /g,'') != '') {
 	       iDB.createConversion(text, function(conversion) {
@@ -20,33 +20,47 @@ $(document).ready(function(){
 
 	function refreshConversions() {  
 	  iDB.fetchConversions(function(conversions) {
-	    var conversionList = document.getElementById('conversion-items');
 
 	    for(var i = 0; i < conversions.length; i++) {
+	      
 	      var conversion = conversions[(conversions.length - 1 - i)];
 
 	      var li = document.createElement('li');
 	      li.id = 'conversion-' + conversion.timestamp;
-	      var checkbox = document.createElement('input');
-	      checkbox.type = "checkbox";
-	      checkbox.className = "todo-checkbox";
-	      checkbox.setAttribute("data-id", conversion.timestamp);
 
-	      li.appendChild(checkbox);
+	      var img = document.createElement('img');
+	      img.className = "todo-checkbox";
+	      img.src = "assets/img/remove2.png";
+	      img.setAttribute("data-id", conversion.timestamp);
+
+	      li.appendChild(img);
+
+	      var anchor = document.createElement('a');
+	      anchor.href = "#";
 
 	      var span = document.createElement('span');
 	      span.innerHTML = conversion.text;
 
-	      li.appendChild(span);
+	      anchor.appendChild(span);
 
-	      conversionList.appendChild(li);
+	      li.appendChild(anchor);
 
-	      checkbox.addEventListener('click', function(e) {
-	      	var id = parseInt(e.target.getAttribute('data-id'));
+	      $("#conversion-items").append(li);
 
-	      	  iDB.deleteTodo(id, refreshConversions);
-	      });
 	    }
+
+	    $("li img").click(function(){
+	    	var id = $(this).data("id");
+
+	    	$("#conversion-items").empty();
+		  	iDB.deleteTodo(id, refreshConversions);
+		});
+
+		$("a span").click(function(){
+	    	var textJSON = $(this).text();
+	    	$("#ta-json").val(textJSON);
+
+		});
 
 	  });
 	}

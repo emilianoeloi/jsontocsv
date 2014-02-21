@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "JSON to CSV",
+  "description": "Convert JSON to CSV",
+  "version": "1",
+  "app": {
+    "urls": [
+      "/index.html"
+    ],
+    "launch": {
+      "web_url": "/index.html"
+    }
+  },
+  "icons": {
+    "128": "icon_128.png"
+  },
+  "offline_enabled" : true,
+  "permissions": [
+    "unlimitedStorage",
+    "notifications",
+    "background",
+    "http://topway.local/*"
+  ]
+}
