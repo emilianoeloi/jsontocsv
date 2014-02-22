@@ -30,7 +30,7 @@ $(document).ready(function(){
 
 	      var img = document.createElement('img');
 	      img.className = "todo-checkbox";
-	      img.src = "assets/img/remove2.png";
+	      img.src = "assets/img/remove.png";
 	      img.setAttribute("data-id", conversion.timestamp);
 
 	      li.appendChild(img);

@@ -4,21 +4,18 @@
   "description": "Convert JSON to CSV",
   "version": "1",
   "app": {
-    "urls": [
-      "/index.html"
-    ],
     "launch": {
-      "web_url": "/index.html"
+      "local_path": "index.html"
     }
   },
   "icons": {
-    "128": "icon_128.png"
+    "128": "assets/img/logo_128.png",
+    "16": "assets/img/logo_16.png"
   },
   "offline_enabled" : true,
   "permissions": [
     "unlimitedStorage",
     "notifications",
-    "background",
-    "http://topway.local/*"
+    "background"
   ]
 }
