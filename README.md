@@ -10,5 +10,7 @@ Convert the array json like this:
 to CSV file like this:
 
 rfc, name
+
 4627, json
+
 4180, csv
